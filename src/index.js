@@ -1,4 +1,5 @@
 /* eslint-disable import/no-unresolved */
+const path = require('path');
 const stylelint = require('stylelint');
 // Support for Node 10
 const matchAll = require('string.prototype.matchall');
@@ -30,7 +31,9 @@ module.exports = stylelint.createPlugin(
 			return;
 		}
 
-		const tokens = require(secondaryOptionsObject);
+		const isLocal = secondaryOptionsObject.startsWith('./');
+		const requirePath = isLocal ? path.resolve(process.cwd(), secondaryOptionsObject) : secondaryOptionsObject;
+		const tokens = require(requirePath);
 
 		root.walkDecls(decl => {
 			if (decl.value.includes('env(')) {

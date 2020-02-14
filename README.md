@@ -6,7 +6,7 @@
 ## Install
 
 ```
-$ yarn add stylelint-design-tokens-plugin
+$ yarn add --dev stylelint-design-tokens-plugin
 ```
 
 

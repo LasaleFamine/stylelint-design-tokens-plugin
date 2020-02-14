@@ -6,8 +6,10 @@ const matchAll = require('string.prototype.matchall');
 
 const ruleName = 'designtokens/check';
 const messages = stylelint.utils.ruleMessages(ruleName, {
-	expected(value, required) {
-		return `[Design Tokens Error]: ${value}. You mean: ${required}?`;
+	expected(value, similarArray) {
+		return similarArray.length > 0 ?
+			`[Design Tokens Error]: ${value}. You mean: --${similarArray.join(' --')}?` :
+			`[Design Tokens Error]: ${value}.`;
 	}
 });
 
@@ -49,7 +51,7 @@ module.exports = stylelint.createPlugin(
 						stylelint.utils.report({
 							result,
 							ruleName,
-							message: messages.expected(`${decl.prop}, ${decl.value}`, `--${similar.join(' --')}`),
+							message: messages.expected(`${decl.prop}, ${decl.value}`, similar),
 							node: decl,
 							word: decl.value
 						});

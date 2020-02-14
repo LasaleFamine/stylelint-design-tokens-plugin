@@ -1,0 +1,60 @@
+/* eslint-disable import/no-unresolved */
+const stylelint = require('stylelint');
+// Support for Node 10
+const matchAll = require('string.prototype.matchall');
+
+const ruleName = 'designtokens/check';
+const messages = stylelint.utils.ruleMessages(ruleName, {
+	expected(value, required) {
+		return `[Design Tokens Error]: ${value}. You mean: ${required}?`;
+	}
+});
+
+module.exports = stylelint.createPlugin(
+	ruleName,
+	(primaryOption, secondaryOptionsObject) => (root, result) => {
+		if (!primaryOption) {
+			return;
+		}
+
+		const validOptions = stylelint.utils.validateOptions(
+			result,
+			ruleName,
+			{
+				actual: secondaryOptionsObject,
+				possible: [value => typeof value === 'string']
+			},
+		);
+
+		if (!validOptions) {
+			return;
+		}
+
+		const tokens = require(secondaryOptionsObject);
+
+		root.walkDecls(decl => {
+			if (decl.value.includes('env(')) {
+				const reg = /env\(([^)]+)\)/gm;
+				const extractedVars = [...matchAll(decl.value, reg)];
+				const cleanedVars = extractedVars.map(item => item[1].replace(/^--/i, ''));
+				const tokensKeys = Object.keys(tokens);
+
+				cleanedVars.forEach(cleanVar => {
+					const found = tokensKeys.find(key => key === cleanVar);
+					if (!found) {
+						const similar = tokensKeys.filter(key => key.includes(cleanVar));
+						stylelint.utils.report({
+							result,
+							ruleName,
+							message: messages.expected(`${decl.prop}, ${decl.value}`, `--${similar.join(' --')}`),
+							node: decl,
+							word: decl.value
+						});
+					}
+				});
+			}
+		});
+	});
+
+module.exports.ruleName = ruleName;
+module.exports.messages = messages;

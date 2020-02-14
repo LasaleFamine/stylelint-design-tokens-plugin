@@ -1,0 +1,56 @@
+{
+	"name": "stylelint-design-tokens-plugin",
+	"version": "0.0.0",
+	"description": "Stylelint plugin for checking Design Tokens use inside your CSS",
+	"license": "MIT",
+	"repository": "LasaleFamine/stylelint-design-tokens-plugin",
+	"bugs": {
+		"url": "https://github.com/LasaleFamine/stylelint-design-tokens-plugin/issues",
+		"email": "info@godev.space"
+	},
+	"homepage": "https://github.com/LasaleFamine/stylelint-design-tokens-plugin",
+	"author": {
+		"name": "Alessio Occhipinti",
+		"email": "info@godev.space",
+		"url": "godev.space"
+	},
+	"main": "src/index.js",
+	"engines": {
+		"node": ">=10"
+	},
+	"scripts": {
+		"release": "git pull && standard-version",
+		"test": "xo"
+	},
+	"files": [
+		"src"
+	],
+	"keywords": [
+		"stylelint-plugin",
+		"design-tokens",
+		"tokens",
+		"stylelint-design-tokens",
+		"design",
+		"design-tokens-check"
+	],
+	"dependencies": {},
+	"devDependencies": {
+		"standard-version": "4.3.0",
+		"xo": "0.21.0"
+	},
+	"peerDependencies": {
+		"stylelint": "^7.0.0 || ^8.0.0"
+	},
+	"xo": {
+		"rules": {
+			"max-len": [
+				"error",
+				{
+					"code": 120,
+					"ignoreUrls": true
+				}
+			],
+			"capitalized-comments": "off"
+		}
+	}
+}

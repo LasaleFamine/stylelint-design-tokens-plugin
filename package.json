@@ -33,7 +33,9 @@
     "design",
     "design-tokens-check"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "string.prototype.matchall": "4.0.2"
+  },
   "devDependencies": {
     "standard-version": "4.3.0",
     "xo": "0.21.0"

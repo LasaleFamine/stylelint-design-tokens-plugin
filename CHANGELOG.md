@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.0.4"></a>
+## [0.0.4](https://github.com/LasaleFamine/stylelint-design-tokens-plugin/compare/v0.0.3...v0.0.4) (2020-02-17)
+
+
+### Bug Fixes
+
+* adding matchall as polyfill ([2f09839](https://github.com/LasaleFamine/stylelint-design-tokens-plugin/commit/2f09839))
+
+
+
 <a name="0.0.3"></a>
 ## [0.0.3](https://github.com/LasaleFamine/stylelint-design-tokens-plugin/compare/v0.0.2...v0.0.3) (2020-02-14)
 

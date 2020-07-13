@@ -37,7 +37,7 @@
     "string.prototype.matchall": "4.0.2"
   },
   "devDependencies": {
-    "standard-version": "4.3.0",
+    "standard-version": "8.0.1",
     "xo": "0.21.0"
   },
   "peerDependencies": {

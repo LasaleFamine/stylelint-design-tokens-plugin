@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 const path = require('path');
 const stylelint = require('stylelint');
 // Support for Node 10
@@ -26,7 +25,7 @@ module.exports = stylelint.createPlugin(
 			{
 				actual: secondaryOptionsObject,
 				possible: [value => typeof value === 'string']
-			},
+			}
 		);
 
 		if (!validOptions) {

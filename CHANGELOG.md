@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.7](https://github.com/LasaleFamine/stylelint-design-tokens-plugin/compare/v0.0.6...v0.0.7) (2020-11-25)
+
+
+### Bug Fixes
+
+* correct filter on matched strings ([840002d](https://github.com/LasaleFamine/stylelint-design-tokens-plugin/commit/840002d4b7f17f043c4d392beeab795c2e34a277))
+
 ### [0.0.6](https://github.com/LasaleFamine/stylelint-design-tokens-plugin/compare/v0.0.5...v0.0.6) (2020-11-25)
 
 

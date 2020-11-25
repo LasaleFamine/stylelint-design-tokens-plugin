@@ -34,11 +34,11 @@
     "design-tokens-check"
   ],
   "dependencies": {
-    "string.prototype.matchall": "4.0.2"
+    "string.prototype.matchall": "4.0.3"
   },
   "devDependencies": {
     "standard-version": "9.0.0",
-    "xo": "0.33.1"
+    "xo": "0.35.0"
   },
   "peerDependencies": {
     "stylelint": "^7.0.0 || ^8.0.0"

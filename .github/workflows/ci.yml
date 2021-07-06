@@ -11,21 +11,6 @@ on:
       - '*'
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x]
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Node Version ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: Test Module
-        run: |
-          yarn --frozen-lockfile
-          yarn test
   publish:
     runs-on: ubuntu-latest
     if: contains(github.ref, 'tag')

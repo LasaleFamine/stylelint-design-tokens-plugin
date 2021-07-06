@@ -1,6 +1,6 @@
 {
   "name": "stylelint-design-tokens-plugin",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Stylelint plugin for checking Design Tokens use inside your CSS",
   "license": "MIT",
   "repository": "LasaleFamine/stylelint-design-tokens-plugin",

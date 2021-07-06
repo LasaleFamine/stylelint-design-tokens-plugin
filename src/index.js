@@ -1,6 +1,6 @@
 const path = require('path');
 const stylelint = require('stylelint');
-var flatten = require('flat')
+const flatten = require('flat')
 
 // Support for Node 10
 const matchAll = require('string.prototype.matchall');

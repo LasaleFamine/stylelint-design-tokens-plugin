@@ -42,7 +42,7 @@
     "xo": "0.35.0"
   },
   "peerDependencies": {
-    "stylelint": "^7.0.0 || ^8.0.0"
+    "stylelint": ">= 13"
   },
   "xo": {
     "rules": {

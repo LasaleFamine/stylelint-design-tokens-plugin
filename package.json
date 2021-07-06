@@ -19,8 +19,8 @@
     "node": ">=10"
   },
   "scripts": {
-    "release": "git pull && standard-version",
-    "test": "xo"
+    "test": "xo",
+    "release": "git pull && standard-version && git push --follow-tags"
   },
   "files": [
     "src"
@@ -34,6 +34,7 @@
     "design-tokens-check"
   ],
   "dependencies": {
+    "flat": "5.0.2",
     "string.prototype.matchall": "4.0.3"
   },
   "devDependencies": {

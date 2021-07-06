@@ -1,6 +1,6 @@
 const path = require('path');
 const stylelint = require('stylelint');
-const flatten = require('flat')
+const flatten = require('flat');
 
 // Support for Node 10
 const matchAll = require('string.prototype.matchall');
@@ -42,7 +42,9 @@ module.exports = stylelint.createPlugin(
 			if (decl.value.includes('env(')) {
 				const reg = /env\(([^)]+)\)/gm;
 				const extractedVars = [...matchAll(decl.value, reg)];
-				const cleanedVars = extractedVars.filter(item => item[1].startsWith('--')).map(item => item[1].replace(/^--/i, ''));
+				const cleanedVars = extractedVars.filter(
+					item => item[1].startsWith('--')
+				).map(item => item[1].replace(/^--/i, ''));
 				const tokensKeys = Object.keys(flatten(tokens, {
 					delimiter: '-'
 				}));

@@ -34,10 +34,10 @@
     "design-tokens-check"
   ],
   "dependencies": {
-    "string.prototype.matchall": "4.0.3"
+    "string.prototype.matchall": "4.0.5"
   },
   "devDependencies": {
-    "standard-version": "9.0.0",
+    "standard-version": "9.3.1",
     "xo": "0.35.0"
   },
   "peerDependencies": {

@@ -39,8 +39,8 @@ module.exports = stylelint.createPlugin(
 		const tokens = require(requirePath);
 
 		root.walkDecls(decl => {
-			if (decl.value.includes('env(')) {
-				const reg = /env\(([^)]+)\)/gm;
+			if (decl.value.includes('env(') || decl.value.includes('token(')) {
+				const reg = /(env|token)\(([^)]+)\)/gm;
 				const extractedVars = [...matchAll(decl.value, reg)];
 				const cleanedVars = extractedVars.filter(
 					item => item[1].startsWith('--')
